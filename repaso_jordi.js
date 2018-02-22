@@ -6,9 +6,7 @@ var res = []
   }
   return res;
 }
-//main()
-var res = invertir("hola mundo");
-console.log(res);
+module.exports.invertir = invertir
 //Funcion Asincrona()
 function invertir2 (palabra, callback){
   var res=[]
@@ -17,10 +15,4 @@ function invertir2 (palabra, callback){
 }
 callback(res)
 }
-//main()
-var res = invertir("hola")
-invertir2("hola otra vez", function (resultado){
-  console.log("dentro del callback:" + resultado)
-});
-//fin funciones
-console.log("final funciones sincronas y asincronas")
+module.exports.invertir2 = invertir2
