@@ -48,6 +48,7 @@ module.exports = class punto {
 
     var resultado = new punto(x,y);
     return resultado;
+
   }
   //----------------------------------------------------------------------------
 }
