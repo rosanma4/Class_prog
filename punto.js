@@ -11,9 +11,11 @@ module.exports = class punto {
 
   constructor() {
     if(arguments.length == 2) {
+      console.log("Correcto: Me has pasado "+arguments.length)
       this.X = arguments[0];
       this.Y = arguments[1];
     } else {
+      console.log("Error: Me has pasado "+arguments.length)
       this.X = 0;
       this.Y = 0;
     }
