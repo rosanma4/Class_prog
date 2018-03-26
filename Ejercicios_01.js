@@ -94,13 +94,13 @@ console.log(a.split(" "))
 //------------------------------------
 var listaNum = [3, 5, 2, 7, 19]
 console.log(listaNum);
-console.log(listaNum.pop())
+console.log(listaNum.pop()) // eliminar el ultimo elemento de un array y lo devuelve
 console.log(listaNum);
-console.log(listaNum.push ("hola"))
+console.log(listaNum.push ("hola")) // agrega uno o más elementos al final de un array y devuelve la nueva longitud del array
 console.log(listaNum);
-console.log(listaNum.shift ("principio"))
+console.log(listaNum.shift ("principio")) //elimina el elemento en el índice cero y desplaza los valores consecutivos hacia abajo, devolviendo el valor eliminado
 console.log(listaNum);
-console.log(listaNum.unshift("principio"))
+console.log(listaNum.unshift("principio")) // agrega uno o mas elementos al inicio del array y devuelve la nueva longitud del array
 console.log(listaNum);
 //------------------------------------
 //------------------------------------
