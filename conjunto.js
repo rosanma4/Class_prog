@@ -6,7 +6,7 @@ const NO_ESTA = -1
 
 // explicación
 
-class Conjunto{
+module.exports = class Conjunto{
 
   constructor(){
     //creamos una lista vacia y la guardamos
@@ -46,13 +46,3 @@ class Conjunto{
   }
 }//class
 // main()
-module.exports = Conjunto;
-var Conjunto = require("../conjunt/conjunto.js");
-
-var c1 = new Conjunto();
-var t = c1.talla();
-var o = c1.onEsta();
-
-
-console.log(t);
-console.log(o);
