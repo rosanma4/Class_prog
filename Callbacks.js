@@ -1,7 +1,7 @@
 //----------------------------------------------
 //Ejercicio Sencillo callback
 var inicio = function (valor, callback){
-  if(typeof callback === 'function'){ // Para verificar que callback es una función
+  if(typeof callback === 'function'){ // Para verificar que callback es una función y asi no da error
     callback(valor);
   }else{
     console.log(valor);
@@ -11,14 +11,10 @@ inicio ("Román", "asdasa");
 // otra manera
 console.log("********************************************************");
 var inicio = function (valor, callback){
-  if(typeof callback === 'function'){ // Para verificar que callback es una función y asi no da error 
-    callback(valor);
-  }else{
-    console.log(valor);
-  }
+  callback(valor);
 }
 inicio ("Raquel", function(valor){
-  console.log("Bienvenido "+ valor)
+  console.log("Bienvenida "+ valor)
 });
 //----------------------------------------------
 console.log("********************************************************");
