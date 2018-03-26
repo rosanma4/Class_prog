@@ -54,3 +54,29 @@ comprobar ("hola", 'o', function(respuesta1){
     }
     })
   })
+
+//-----------------------------------
+//-----------------------------------
+//Pregunta 3
+//Contar s en buenos dias
+var r = contar ("buenos dias", function (letra){
+  if (letra == "s") {
+    return true;
+  }else{
+    return false;
+  }
+})
+console.log(r)
+
+//-----------------------------------
+// Diseña la funcion contar() Anónima
+// texto / funcion(letra --> f() --> V/F) --> contar() --> Numero Entero
+
+funcion contar ( texto, f){
+  var n = 0;
+  for (var l of texto){
+    if (f(l) == true){
+      n++;
+    }
+  } return n;
+}
