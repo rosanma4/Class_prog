@@ -20,8 +20,8 @@ module.exports = class Conjunto{
   }
   //R-->DondeEsta()-->Entero// NO ESTA(posicion donde esta, si no esta devuelve un numero negativo)
   DondeEsta(num){
-    for (var i = 0; i <= this.losElementos[i]length-1; i++) {
-      if(num== this.losElementos[i]){
+    for (var i = 0; i <= this.losElementos.length-1; i++) {
+      if(num == this.losElementos[i]){
         //bingo
         return i //tornem on esta, i acabe
       }//if
@@ -39,9 +39,11 @@ module.exports = class Conjunto{
     return true
   }
   //R --> añadir()
-  añadir(num){
+  anadir(num){
     if(! this.contiene(num)){
       this.losElementos.push(num)
+    }else {
+      console.log("Error: El numero "+num+" ya existe")
     }
   }
 }//class
