@@ -4,6 +4,7 @@
 //la función principal ha terminado de ejecutarse,
 //o cuando a nosotros nos interese...
 //Ejemplo:
+console.log("1 ejercicio");
 function hagoAlgo() {
     return 'Hola Roman!!';
 }
@@ -11,7 +12,7 @@ function hagoAlgo() {
 console.log(hagoAlgo());
 console.log("********************************************************");
 // Prueba:
-console.log("1 ejercicio");
+console.log("2 ejercicio");
 function funcionPrincipal(callback){
  console.log('hago algo y llamo al callback avisando que terminé');
  callback();
@@ -26,7 +27,7 @@ console.log("********************************************************");
 //----------------------------------------------
 //La función callback recibe argumentos que se envían desde la función
 // funcionPrincipal
-console.log("2 ejercicio");
+console.log("3 ejercicio");
 function funcionPrincipal(callback){
  console.log('hago algo y llamo al callback avisando que terminé');
  callback("Roman");
