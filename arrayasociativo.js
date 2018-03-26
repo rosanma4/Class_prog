@@ -1,3 +1,4 @@
+//ejercicio
 datosPersonales = {
 nombre: "pepe", apellidos: "perez perez", dni: 1234
 }
