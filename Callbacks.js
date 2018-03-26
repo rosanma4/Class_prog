@@ -1,31 +1,38 @@
 //----------------------------------------------
-//Ejercicio Sencillo callback
-var inicio = function (valor, callback){
-  if(typeof callback === 'function'){ // Para verificar que callback es una función y asi no da error
-    callback(valor);
-  }else{
-    console.log(valor);
-  }
+//Callback = Invoco una función pasándole como parámetro otra
+//función (el callback) esta función parámetro se ejecuta cuando
+//la función principal ha terminado de ejecutarse,
+//o cuando a nosotros nos interese...
+//Ejemplo:
+function hagoAlgo() {
+    return 'Hola Roman!!';
 }
-inicio ("Román", "asdasa");
-// otra manera
+
+console.log(hagoAlgo());
 console.log("********************************************************");
-var inicio = function (valor, callback){
-  callback(valor);
+// Prueba:
+console.log("1 ejercicio");
+function funcionPrincipal(callback){
+ console.log('hago algo y llamo al callback avisando que terminé');
+ callback();
 }
-inicio ("Raquel", function(valor){
-  console.log("Bienvenida "+ valor)
+
+funcionPrincipal(function(){
+ console.log('terminó de hacer algo');
 });
-//----------------------------------------------
-console.log("********************************************************");
-// Procesar un array
-
-var zfighters = ["Goku", "Vegeta", "Gohan", "Piccolo"];
-  zfighters.forEach(function(name,index){
-  console.log(index + 1 + ". " + name)
-})
-
-// Fin Procesar un array
-//----------------------------------------------
+//La función funcionPrincipal se ejecuta recibiendo un argumento que es otra
+//función y que se ejecuta después de que termine su labor llamando a callback
 console.log("********************************************************");
 //----------------------------------------------
+//La función callback recibe argumentos que se envían desde la función
+// funcionPrincipal
+console.log("2 ejercicio");
+function funcionPrincipal(callback){
+ console.log('hago algo y llamo al callback avisando que terminé');
+ callback("Roman");
+}
+
+funcionPrincipal(function(nombre){
+ console.log('me llamo ' + nombre);
+});
+console.log("********************************************************");
