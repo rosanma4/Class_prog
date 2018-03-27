@@ -40,15 +40,18 @@ var lista 1 = [ 1, 22, 333]
 //-----------------------------------
 //Pregunta 2
 //Diseño, recibe --> texto y letra, devuelve --> V si el primero contiene el segundo
-function comprobar ( texto, l, callback){
-  callback (true);
+function comprobar ( texto, caracter, callback){
+  for (var i of texto){
+    if (i == caracter){
+    callback (true);
+    return;
+    }
+  }
   callback (false);
 }
 
-
-
 comprobar ("hola", 'o', function(respuesta1){
-  comprobar ("hola",'a', function (respuesta2){
+  comprobar ("hola",'a', function(respuesta2){
     if (respuesta1 && respuesta2){
       console.log("bingo");
     }
