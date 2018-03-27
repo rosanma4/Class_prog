@@ -84,7 +84,9 @@ function contar ( texto, f){
 //----------------------------------
 //Pregunta 4
 var sqlite3 = requiere ("sqlite3")
+// bd se refiere a la base de datos que enlazamos
 var bd = new sqlite3.database ("ruta de la base de datos")
+
 // bd.all("select = from Persona;" ,
 //     function (err, res){
 //       if(err != null){
@@ -93,18 +95,24 @@ var bd = new sqlite3.database ("ruta de la base de datos")
 //       }
 //       console.log("cantidad de filas = " + res.length);
 //   });
+
 function cuantos (ape, callback) {
   var textoSQL = "select * from Persona where apellido ='" + ape + "' ;"
   console.log(textoSQL);
+  //function(err, res) es una función anonima
+  // db.all(textoSQL) hace la consulta del codigo textoSQL
   db.all(textoSQL, function(err, res){
+    // si hay error le damos 0 al callback
     if(err != null){
            callback(0);
            return;
          }
+         // Al callback le damos como resultado el tamaño del array
          callback(res.length);
   })
 };
 //main
+//function(es el callback que le llega el array)
 cuantos("perez", function(res){
   console.log(res);
 });
