@@ -1,5 +1,5 @@
 module.exports = Conjunto;
-var Conjunto = require("./mainConjRaquel.js");
+var Conjunto = require("./Raquel_Conjunto.js");
 
 var c1 = new Conjunto();
 
@@ -16,7 +16,7 @@ var diff = c1.diferencia([3, 10, 5]);
 var t = c1.talla();
 //Imprimir por Pantalla
 console.log("Tamaño del Conjunto --> " + t);
-console.log("Que contiene? --> " + c1.contiene(3));
+console.log("Que contiene? --> " + c1.contiene(6));
 console.log("Unir dos conjuntos --> " + unir);
 console.log("Diferencia entre dos conjuntos --> " + diff);
 //Vaciar un conjunto
