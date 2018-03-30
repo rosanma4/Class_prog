@@ -1,5 +1,5 @@
 module.exports = Conjunto;
-var Conjunto = require("./conjuntoRoman.js");
+var Conjunto = require("./Roman_Conjunto.js");
 
 var con1 = new Conjunto();
 
