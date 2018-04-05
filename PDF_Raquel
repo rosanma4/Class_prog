@@ -1,0 +1,33 @@
+//Algotirmos
+
+Vaciar:
+Por cada elemento que tenemos en el array losElementos
+se va eliminando cada valor del array cada vez que realiza
+el bucle for.
+
+Unir:
+Por cada elemento del array nuevo que se pasa como parametro se añade
+al array losElementos.
+
+Diferencia:
+Por cada elemento del array losElementos, se añade como posición
+a un array temporal, dando como valor true. (Primer for)
+Por cada elemento del array que se pasa como parametro, comparamos
+si existe ese elemento en el array temporal, de ser asi se eliminara
+del array temporal, si no se añadira el elemento del array que se pasa
+como parametro.(Segundo for)
+Por cada elemento que hay lo añadimos en un nuevo array para asi devolver
+los valores.(Tercer for)
+
+//Fin Algotirmos
+
+//Implementación Hitos:
+
+1 - Realización de la clase array, con su constructor, talla, dondeEsta,
+Contiene y añadir. (Dada por el profesor en la última clase)
+2 - Realización de eliminar un elemento del array.
+3 - Realizacion de vaciar un array.
+4 - Realización de unir dos arrays para formar uno nuevo a partir de ellos.
+5 - Realización de diferencia a partir del array y la creación de otro array
+temporal, crearemos un tercer array nuevo que contendra la diferencia de los
+dos anteriores. 

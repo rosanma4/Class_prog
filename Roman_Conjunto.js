@@ -35,38 +35,12 @@ module.exports = class Conjunto2{
   }
   //----------------------------------------------------------
   vaciar(){
-    while(this.losElementos.length > 0){
-      this.losElementos.pop();
+    this.losElementos.splice(0, this.losElementos.length);
     }
   }
   //----------------------------------------------------------
   unir(array){
-    for (var i = 0; i <= array.length - 1; i++) {
-      this.losElementos.push(array[i]);
-    }
-    return this.losElementos;
+    return this.losElementos.concat(array);
   }
   //----------------------------------------------------------
-  diferencia(array){
-    var a = [], diff = [];
-
-    for (var i = 0; i < this.losElementos.length; i++) {
-        a[this.losElementos[i]] = true;
-    }
-
-    for (var i = 0; i < array.length; i++) {
-        if (a[array[i]]) {
-            delete a[array[i]];
-        } else {
-            a[array[i]] = true;
-        }
-    }
-
-    for (var k in a) {
-        diff.push(k);
-    }
-
-    return diff;
-  }
-
 }
