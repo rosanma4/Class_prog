@@ -9,7 +9,7 @@ c1.anadir(9);
 c1.anadir(7);
 c1.anadir(6);
 c1.anadir(3);
-
+console.log(c1);
 //Eliminamos un valor en concreto del array:
 
 c1.eliminar(3);
@@ -26,8 +26,9 @@ var t = c1.talla();
 
 //Imprimir por Pantalla
 
+console.log(c1);
 console.log("El tamaño del conjunto sera =  " + t);
-console.log("El array contiene =  " + c1.contiene(6));
+console.log("El array contiene  el 6 =  " + c1.contiene(6));
 console.log("Si unimos dos conjuntos nos dara = " + unir);
 console.log("Que diferencia habra entre los dos conjuntos = " + diff);
 
