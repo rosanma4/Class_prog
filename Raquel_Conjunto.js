@@ -69,6 +69,7 @@ module.exports = class Conjunto{
   vaciar(){
     while(this.losElementos.length > 0){
         this.losElementos.pop();
+      }
   }
 
   //----------------------------------------------------------
