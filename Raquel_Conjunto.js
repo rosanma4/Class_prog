@@ -56,6 +56,7 @@ module.exports = class Conjunto{
   //Eliminar:
   //Eliminamos un valor especifico del array
   //----------------------------------------------------------
+  //Cambia el contenido del array eliminado los elementos existentes
 
   eliminar(num){
     this.losElementos.splice(this.dondeEsta(num), 1);
@@ -65,6 +66,8 @@ module.exports = class Conjunto{
   //Vaciar:
   //Vaciar un array entero
   //----------------------------------------------------------
+  //Mientras que el tamaño del array siempre sea mayor que 0
+  //eliminar elemento a elemento hasta que no quede ninguno
 
   vaciar(){
     while(this.losElementos.length > 0){
@@ -90,12 +93,20 @@ module.exports = class Conjunto{
   //la diferencia de los dos conjuntos nos dara un conjunto nuevo.
   //----------------------------------------------------------
 
+
   diferencia(array){
     var a = [], diff = [];
+
+    //Cada elemento del array sera añadido como una posición a un array
+    //temporal devolviendonos verdadero
 
     for (var i = 0; i < this.losElementos.length; i++) {
         a[this.losElementos[i]] = true;
     }
+
+    //Cada elemento del array que pasamos, se comparara con los
+    //elementos del array temporal, si coincide alguno en este caso
+    //se eliminara del array tempora, si no añadira otro elemento.
 
     for (var i = 0; i < array.length; i++) {
         if (a[array[i]]) {
@@ -105,9 +116,13 @@ module.exports = class Conjunto{
         }
     }
 
+    //Por cada elemento, se añadira a un nuevo array.
+
     for (var k in a) {
         diff.push(k);
     }
+
+    //Devolveremos el nuevo array final.
 
     return diff;
   }
