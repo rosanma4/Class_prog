@@ -1,5 +1,3 @@
-//Información Obtenido de la página https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array
-//utilizando las distintas opciones que se dan.
 const NO_ESTA = -1
 
 module.exports = class Conjunto{
