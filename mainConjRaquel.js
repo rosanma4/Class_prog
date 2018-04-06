@@ -10,10 +10,12 @@ c1.anadir(3);
 console.log(c1);
 var t = c1.talla();
 console.log("El tamaño del conjunto sera =  " + t);
+console.log(c1);
+console.log("Eliminar el 3 del array");
 c1.eliminar(3);
 console.log(c1);
 console.log("El array contiene  el 6 =  " + c1.contiene(6));
-c1.contiene(7);
+
 
 var unir = c1.unir([8,210,23]);
 console.log("Si unimos dos conjuntos nos dara = " + unir);
