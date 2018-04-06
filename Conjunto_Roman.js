@@ -36,7 +36,7 @@ module.exports = class Conjunto2{
   //----------------------------------------------------------
   vaciar(){
     this.losElementos.splice(0, this.losElementos.length);
-    }
+    
   }
   //----------------------------------------------------------
   unir(array){
