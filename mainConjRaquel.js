@@ -15,6 +15,7 @@ console.log("Eliminar el 3 del array");
 c1.eliminar(3);
 console.log(c1);
 console.log("El array contiene  el 6 =  " + c1.contiene(6));
+console.log("El array contiene el 3 =  " + c1.contiene(3));
 
 
 var unir = c1.unir([8,210,23]);
@@ -34,4 +35,3 @@ var t = c1.talla();
 //Imprimir por Pantalla
 
 console.log("El tamaño del conjunto sera =  " + t);
-console.log("El array contiene =  " + c1.contiene(3));
