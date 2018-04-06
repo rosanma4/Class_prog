@@ -30,14 +30,9 @@ console.log("Que diferencia habra entre los dos conjuntos = " + diff);
 console.log("--------------");
 
 //Vaciar un conjunto
-console.log("Si vaciamos el arrat nos saldra:");
+console.log("Si vaciamos el array nos saldra:");
 c1.vaciar();
 console.log(c1);
-console.log("--------------");
-//Funciones
-
 var t = c1.talla();
-
-//Imprimir por Pantalla
-
 console.log("El tamaño del conjunto sera =  " + t);
+console.log("--------------");
