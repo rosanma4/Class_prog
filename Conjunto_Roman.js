@@ -1,6 +1,6 @@
 const NO_ESTA = -1
 
-module.exports = class Conjunto2{
+module.exports = class Conjunto{
 
   constructor(){
     this.losElementos = []
@@ -26,21 +26,25 @@ module.exports = class Conjunto2{
     return true;
   }
   //----------------------------------------------------------
+  //Añadiremos valores al array
   anadir(num){
     this.losElementos.push(num)
   }
   //----------------------------------------------------------
-  eliminar(num){
-    this.losElementos.splice(this.dondeEsta(num), 1);
-  }
-  //----------------------------------------------------------
-  vaciar(){
-    this.losElementos.splice(0, this.losElementos.length);
-    
-  }
-  //----------------------------------------------------------
+  //Realizaremos la unión de dos conjuntos a partir del comando concat
+  //para formar uno nuevo
   unir(array){
     return this.losElementos.concat(array);
+  }
+  //----------------------------------------------------------
+  //Vaciaremos un array
+  vaciar(){
+    this.losElementos.splice(0, this.losElementos.length);
+  }
+  //----------------------------------------------------------
+  //Eliminaremos un valor del conjunto
+  eliminar(num){
+    this.losElementos.splice(this.dondeEsta(num), 1);
   }
   //----------------------------------------------------------
 }
