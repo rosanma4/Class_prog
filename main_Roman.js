@@ -2,7 +2,6 @@ module.exports = Conjunto;
 var Conjunto = require("./Conjunto_Roman.js");
 var con1 = new Conjunto();
 
-//Añadir Valores al Conjunto
 con1.anadir(1);
 con1.anadir(2);
 con1.anadir(3);
