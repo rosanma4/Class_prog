@@ -56,10 +56,11 @@ module.exports = class Conjunto{
   //Eliminar:
   //Eliminamos un valor especifico del array
   //----------------------------------------------------------
-  //Cambia el contenido del array eliminado los elementos existentes
+  //Cambia el contenido del array eliminando los elementos existentes
+  //elimina la posición del número del conjunto creado
 
   eliminar(num){
-    this.losElementos.splice(this.dondeEsta(num), 1);
+    this.losElementos.splice(this.dondeEsta(num));
   }
 
   //----------------------------------------------------------
@@ -77,7 +78,7 @@ module.exports = class Conjunto{
 
   //----------------------------------------------------------
   //Unir:
-  //Apartir de un array nuevo lo juntamos con el primer array creado formaremos un conjunto nuevo
+  //Apartir de un array nuevo lo juntamos con el primer array creado y formaremos un conjunto nuevo
   //----------------------------------------------------------
 
   unir(array){
@@ -87,39 +88,4 @@ module.exports = class Conjunto{
     return this.losElementos;
   }
 
-  //----------------------------------------------------------
-  //Diferencia:
-  //Tenemos un conjunto creado y creamos otro dentro de esta función, en la cual
-  //la diferencia de los dos conjuntos nos dara un conjunto nuevo.
-  //----------------------------------------------------------
-
-
-  diferencia(array){
-    var array1 = [], res = [];
-    //Por cada elemento del array losElementos, se añade como posición
-    //a un array temporal, dando como valor true.
-    for (var i = 0; i < this.losElementos.length; i++) {
-      array1[this.losElementos[i]] = true;
-    }
-    //Por cada elemento del array que se pasa como parametro, comparamos
-    //si existe ese elemento en el array temporal, de ser asi se eliminara
-    //del array temporal, si no se añadira el elemento del array que se pasa
-    //como parametro.
-    for (var i = 0; i < array.length; i++) {
-        if (array1[array[i]]) {
-          delete array1[array[i]];
-          } else {
-          array1[array[i]] = true;
-            }
-    }
-    //Por cada elemento que hay lo añadimos en un nuevo array para asi devolver
-    //los valores.
-    for (var k in array1) {
-      res.push(k);
-    }
-
-     return res;
-}
-  //----------------------------------------------------------
-  //----------------------------------------------------------
-}
+} // class Conjunto
