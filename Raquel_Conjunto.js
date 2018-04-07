@@ -95,30 +95,30 @@ module.exports = class Conjunto{
 
 
   diferencia(array){
-    var a = [], dif = [];
+    var array1 = [], res = [];
     //Por cada elemento del array losElementos, se añade como posición
     //a un array temporal, dando como valor true.
     for (var i = 0; i < this.losElementos.length; i++) {
-      a[this.losElementos[i]] = true;
+      array1[this.losElementos[i]] = true;
     }
     //Por cada elemento del array que se pasa como parametro, comparamos
     //si existe ese elemento en el array temporal, de ser asi se eliminara
     //del array temporal, si no se añadira el elemento del array que se pasa
     //como parametro.
     for (var i = 0; i < array.length; i++) {
-        if (a[array[i]]) {
-          delete a[array[i]];
+        if (array1[array[i]]) {
+          delete array1[array[i]];
           } else {
-          a[array[i]] = true;
+          array1[array[i]] = true;
             }
     }
     //Por cada elemento que hay lo añadimos en un nuevo array para asi devolver
     //los valores.
-    for (var k in a) {
-      dif.push(k);
+    for (var k in array1) {
+      res.push(k);
     }
 
-     return dif;
+     return res;
 }
   //----------------------------------------------------------
   //----------------------------------------------------------

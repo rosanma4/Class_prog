@@ -25,8 +25,8 @@ var unir = c1.unir([8,210,23]);
 console.log("Si unimos dos conjuntos nos dara = " + unir);
 console.log("--------------");
 
-var dif = c1.diferencia([3, 10, 5]);
-console.log("Que diferencia habra entre los dos conjuntos = " + dif);
+var res = c1.diferencia([3, 10, 5]);
+console.log("Que diferencia habra entre los dos conjuntos = " + res);
 console.log("--------------");
 
 //Vaciar un conjunto
