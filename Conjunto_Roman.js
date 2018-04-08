@@ -37,14 +37,14 @@ module.exports = class Conjunto{
     return this.losElementos.concat(array);
   }
   //----------------------------------------------------------
-  //Vaciaremos un array
+  //Vaciaremos un array desde la posición 0 hasta el tamaño que tenga ese array.
   vaciar(){
     this.losElementos.splice(0, this.losElementos.length);
   }
   //----------------------------------------------------------
-  //Eliminaremos un valor del conjunto
+  //Eliminaremos un valor que queramos del conjunto
   eliminar(num){
     this.losElementos.splice(this.dondeEsta(num), 1);
   }
   //----------------------------------------------------------
-}
+}; // Clase
