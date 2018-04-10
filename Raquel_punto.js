@@ -53,7 +53,7 @@ module.exports = class punto {
      let distancia = 0;
 
      if (lista.length > 2) {
-       for (let i = 0; i < lista.length - 1; i++) {
+       for (var i = 0; i < lista.length - 1; i++) {
          distancia += lista[i].distancia(lista[i + 1]);
        }
      }
