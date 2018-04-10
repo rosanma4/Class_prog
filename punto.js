@@ -11,7 +11,7 @@ module.exports = class punto {
 
   constructor() {
     if(arguments.length == 2) {
-      
+
       this.X = arguments[0];
       this.Y = arguments[1];
     } else {
@@ -41,6 +41,21 @@ module.exports = class punto {
     return distancia;
   }
   //----------------------------------------------------------------------------
+
+  static distanciaTotal(lista) {
+
+     let distancia = 0;
+
+     if (lista.length > 2) {
+       for (let i = 0; i < lista.length - 1; i++) {
+         distancia += lista[i].distancia(lista[i + 1]);
+         // console.log(distancia)
+       }
+     }
+
+     return distancia;
+   }
+   //----------------------------------------------------------------------------
 
   suma(punto2) {
     var x;
