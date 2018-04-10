@@ -70,11 +70,14 @@ module.exports = class Conjunto{
   //Mientras que el tamaño del array siempre sea mayor que 0
   //eliminar elemento a elemento hasta que no quede ninguno
 
-  vaciar(){
+  /*vaciar(){
     while(this.losElementos.length > 0){
         this.losElementos.pop();
       }
-  }
+  }*/
+  vaciar(){
+    this.losElementos.length = 0
+    }
 
   //----------------------------------------------------------
   //Unir:
