@@ -1,13 +1,4 @@
 module.exports = class punto {
-/*  constructor() {
-    this.X=0;
-    this.Y=0;
-  }//---------------------------------------------------------------------------- */
-
-  /*constructor() {
-    this.X = 0;
-    this.Y = 0;
-  } */
 
   constructor() {
     if(arguments.length == 2) {
