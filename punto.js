@@ -41,7 +41,6 @@ module.exports = class punto {
     return distancia;
   }
   //----------------------------------------------------------------------------
-
     static distanciaTotal(lista) {
 
      let distancia = 0;

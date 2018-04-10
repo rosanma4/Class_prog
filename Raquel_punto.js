@@ -1,29 +1,28 @@
 module.exports = class punto {
 
   constructor() {
+    //
     if(arguments.length == 2) {
-      console.log("Correcto: Me has pasado "+arguments.length)
       this.X = arguments[0];
       this.Y = arguments[1];
     } else {
-      console.log("Error: Me has pasado "+arguments.length)
       this.X = 0;
       this.Y = 0;
     }
   }
   //----------------------------------------------------------------------------
-
+  // Devolveremos el primer parámetro del punto 1
   getX() {
     return this.X;
   }
   //----------------------------------------------------------------------------
-
+  // Devolveremos el primer parámetro del punto 2
   getY() {
     return this.Y;
   }
   //----------------------------------------------------------------------------
-
- distancia(punto2) {
+  // La distancia que existe desde el punto 1 al punto 2
+  distancia(punto2) {
 
     var distancia;
 
@@ -32,11 +31,13 @@ module.exports = class punto {
     return distancia;
   }
   //----------------------------------------------------------------------------
-
+  // Suma de los dos puntos
   suma(punto2) {
     var x;
     var y;
+    //suma del primer parámetro del punto 1 y punto 2
     x = this.X + punto2.getX();
+    //suma del segundo parámetro del punto 1 y punto 2
     y = this.Y + punto2.getY();
 
     var resultado = new punto(x,y);
@@ -52,7 +53,7 @@ module.exports = class punto {
      let distancia = 0;
 
      if (lista.length > 2) {
-       for (var i = 0; i < lista.length - 1; i++) {
+       for (let i = 0; i < lista.length - 1; i++) {
          distancia += lista[i].distancia(lista[i + 1]);
        }
      }
