@@ -44,7 +44,9 @@ module.exports = class punto {
 
   }
   //----------------------------------------------------------------------------
-
+  // static no tienes que instanciar un objeto.
+  // Si la lista es mayor de 2, que la recorra y saque la distancia de cada
+  // punto con su consecutivo
   static distanciaTotal(lista) {
 
      let distancia = 0;
