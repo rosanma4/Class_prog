@@ -29,7 +29,7 @@ describe( "Test 1 (probar a añadir zonas)", function() {
 			function( err ) {
 				assert.equal( null, err, " conexión a BD fallada: " + err)
 				hecho()
-			}) 
+			})
 	}) // before
 
 	// ....................................................
@@ -40,7 +40,7 @@ describe( "Test 1 (probar a añadir zonas)", function() {
 		laLogica.borrarTodosLosDatos( function() {
 			hecho()
 		})
-		
+
 	}) // it
 
 	// ....................................................
@@ -57,7 +57,7 @@ describe( "Test 1 (probar a añadir zonas)", function() {
 			assert.ok( ! err, " ¿hay error? : " + err )
 			hecho()
 		})
-		
+
 	}) // it
 
 	// ....................................................
@@ -75,7 +75,7 @@ describe( "Test 1 (probar a añadir zonas)", function() {
 
 			hecho()
 		})
-		
+
 	}) // it
 
 	// ....................................................
@@ -87,21 +87,32 @@ describe( "Test 1 (probar a añadir zonas)", function() {
 		// lo que antes he guardado
 		/*
 		  COMPLETAR
-		  laLogica.getZona( 
+		  laLogica.getZona(
 		*/
 
-		assert.equal( true, false, " FALTA HACER ESTE TEST " )
+		//assert.equal( true, false, " FALTA HACER ESTE TEST " )
 
 		hecho()
-		
-	}) // it
 
+	}) // it
+	// ....................................................
+	//
+	// ....................................................
+	it( "pruebo getDescripcionDeZona()", function( hecho ){
+		laLogica.getDescripcionDeZona("marjal",
+		function(err, res){
+			assert.ok(!err)
+			assert.equal(err, null)
+			//console.log(res)
+			assert.ok(res.includes("Grau"))
+			hecho() 	// avisar que este mini-test ha terminado
+		})
+	}) // it
 	// ....................................................
 	//
 	// ....................................................
 	after( function() {
 		laLogica.cerrar()
 	})
-	
-}) // describe 
 
+}) // describe

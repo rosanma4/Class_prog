@@ -12,13 +12,13 @@ const ConexionBD = require( "./ConexionBD.js" )
 class Logica {
 
 	// .................................................................
-	// 
+	//
 	// nombreBD: Texto
 	// -->
-	//    f () 
+	//    f ()
 	// -->
 	// Terminado // via callback()
-	// 
+	//
 	// .................................................................
 	constructor( nombreBD, callback ) {
 		this.laConexion = new ConexionBD( nombreBD, callback )
@@ -34,7 +34,7 @@ class Logica {
 	//
 	// datosZona: JSON {nombre: Texto, descripcion: Texto}
 	// -->
-	//    f () 
+	//    f ()
 	// -->
 	// void / Error // via callback( err )
 	//
@@ -46,17 +46,17 @@ class Logica {
 			$nombre: datosZona.nombre,
 			$descripcion: datosZona.descripcion
 		}
-		
+
 		this.laConexion.modificarConPrepared( textoSQL, datos, callback )
-											  
+
 	} // ()
 
 	// .................................................................
-	// 
+	//
 	//    f()
 	// -->
 	// Terminado // via callbak()
-	// 
+	//
 	// .................................................................
 	borrarTodosLosDatos( callback ) {
 		var self = this
@@ -76,7 +76,7 @@ class Logica {
 	// nombreZona: texto
 	// vertice: JSON {latitud: R, longitud: R}
 	// -->
-	//    f () 
+	//    f ()
 	// -->
 	// void / Error // via callback( err )
 	//
@@ -89,14 +89,55 @@ class Logica {
 			$longitud: vertice.longitud,
 			$latitud: vertice.latitud
 		}
-		
-		this.laConexion.modificarConPrepared( textoSQL, datos, callback )
-											  
-	} // ()
 
+		this.laConexion.modificarConPrepared( textoSQL, datos, callback )
+
+	} // ()
+	// .................................................................
+	//
+	//nombreZona: texto
+	// -->
+	//		f()
+	// -->
+	//descripcion: Texto 		//via callback(err, res)
+	// .................................................................
+	getDescripcionDeZona( nombreZona, callback){
+		//console.log(" getDescripcionDeZona(): me han llamado ")
+
+		// hay que consultar la base de datos
+		var pregunta = "select * from Zona where nombre = '"+ nombreZona +"';"
+		//console.log(pregunta);
+
+		this.laConexion.consultar(pregunta, function(err, res){
+				//mirar si hay error
+				//si hay error devolver el error
+				//y no seguir
+				if(err){
+					callback(err, null)	//devuelve el error
+					return //no seguir
+				}
+				//error no hay
+
+				//mira si el array esta vacio
+				if (res.length ==  0){
+					//vaya, no hay ninguna zona con ese nombre
+					callback(null, null) //no hay error y no hay resultado
+					return //no sigo
+				}
+
+				//error no hay y SI resultado
+				callback(null, res[0].descripcion)
+
+
+
+		})
+
+
+	}
 	// .................................................................
 	// .................................................................
 	getZona( nombreZona, callback ) {
+
 	} // ()
 
 } // class
