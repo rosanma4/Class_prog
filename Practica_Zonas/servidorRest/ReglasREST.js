@@ -1,7 +1,7 @@
 // ------------------------------------------------------
-// 
-// ReglasREST.js 
-// 
+//
+// ReglasREST.js
+//
 // ------------------------------------------------------
 
 // ------------------------------------------------------
@@ -15,21 +15,22 @@ module.exports.cargar = function( servidorExpress, laLogica ) {
 	// .......................................................
 	//
 	// GET /zona/<nombreZona>
-	// 
+	//
 	// Ej.: GET /zona/marjal
 	//
 	// .......................................................
 	// .......................................................
+	//Cuando llege un GET hacer esto
 	servidorExpress.get('/zona/:nombreZona', function( req, response ){
 
 		//
-		// 
+		//
 		//
 		console.log( " ------------------------------- " )
 		console.log( " * GET /zona :   " + req.url )
 		console.log( " ------------------------------- " )
 
-		const nombreZona =  req.params.nombreZona 
+		const nombreZona =  req.params.nombreZona
 		console.log( "\t nombreZona = " + nombreZona )
 
 		//
@@ -39,26 +40,26 @@ module.exports.cargar = function( servidorExpress, laLogica ) {
 
 			if ( err ) {
 				response.writeHead( 404, // not found
-									{'Content-Type': 'text/plain'}) 
+									{'Content-Type': 'text/plain'})
 				response.write ( err )
 				response.end()
 
 				return
 			}
-			
+
 			//
 			// respuesta correcta
 			//
 			response.writeHead(200, {'Content-Type': 'text/json'})
 			response.write ( JSON.stringify( res ) )
-			
+
 			//
-			// 
+			//
 			//
 			response.end()
 		}) // getZona ()
 
-	}) // 
+	}) //
 
 	// ------------------------------------------------------
 	// ------------------------------------------------------
