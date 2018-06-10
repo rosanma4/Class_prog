@@ -105,7 +105,7 @@ class Logica {
 		//console.log(" getDescripcionDeZona(): me han llamado ")
 
 		// hay que consultar la base de datos
-		var pregunta = "select * from Zona where nombre = '"+ nombreZona +"';"
+		var pregunta = "SELECT * from Zona WHERE nombre = '"+ nombreZona +"';"
 		//console.log(pregunta);
 
 		this.laConexion.consultar(pregunta, function(err, res){
@@ -126,7 +126,7 @@ class Logica {
 				}
 
 				//error no hay y SI resultado
-				callback(null, res[0].descripcion)
+				callback(null, res[0])
 
 
 
@@ -136,7 +136,51 @@ class Logica {
 	}
 	// .................................................................
 	// .................................................................
+	getCoordenadasDeUnaZona(nombreZona, callback){
+		var b = "SELECT * FROM vertice WHERE nombreZona = '" + nombreZona +"';"
+		this.laConexion.consultar(b, function(err, res){
+			if (err){
+				callback(err, null)
+				return
+			}
+			if (res.length == 0){
+			callback (null, null)
+			return
+		}
+		callback(null, res)
+		//console.log(res)
+		})
+	}
+	// .................................................................
+	// .................................................................
 	getZona( nombreZona, callback ) {
+		var that = this
+		this.getDescripcionDeZona( nombreZona, function( err, res){
+			if(err ){
+				callback(err, null)
+				return
+			}
+			if(!res){
+				callback(null, null)
+			return
+			}
+			that.getCoordenadasDeUnaZona(nombreZona, function(err2, res2){
+				if(err2 ){
+					callback(err2, null)
+					return
+				}
+				if(!res2){
+					res2=[]
+				}
+				var zona = {
+					nombre: nombreZona,
+					descripcion: res.descripcion,
+					vertices: res2
+				}
+				callback (null, zona)
+			})
+		})
+
 
 	} // ()
 

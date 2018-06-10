@@ -20,7 +20,6 @@ module.exports.cargar = function( servidorExpress, laLogica ) {
 	//
 	// .......................................................
 	// .......................................................
-	//Cuando llege un GET hacer esto
 	servidorExpress.get('/zona/:nombreZona', function( req, response ){
 
 		//
@@ -43,7 +42,12 @@ module.exports.cargar = function( servidorExpress, laLogica ) {
 									{'Content-Type': 'text/plain'})
 				response.write ( err )
 				response.end()
+				return
+			}
 
+			if(res == null){
+				response.writeHead(404);
+				response.end();
 				return
 			}
 
@@ -56,6 +60,7 @@ module.exports.cargar = function( servidorExpress, laLogica ) {
 			//
 			//
 			//
+			console.log( " final de resposta correcta ")
 			response.end()
 		}) // getZona ()
 

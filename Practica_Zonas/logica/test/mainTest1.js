@@ -91,7 +91,11 @@ describe( "Test 1 (probar a añadir zonas)", function() {
 		*/
 
 		//assert.equal( true, false, " FALTA HACER ESTE TEST " )
-
+		laLogica.getZona("marjal", function ( hecho){
+			//assert.strictEqual(err,null, "No devuelve error")
+			assert.strictEqual(res.nombre, "marjal", "Es Correcto?")
+			assert.strictEqual(res.descripcion, "marjal al lado del Grau de Gandia", "Es correcta?")
+		})
 		hecho()
 
 	}) // it
@@ -101,13 +105,26 @@ describe( "Test 1 (probar a añadir zonas)", function() {
 	it( "pruebo getDescripcionDeZona()", function( hecho ){
 		laLogica.getDescripcionDeZona("marjal",
 		function(err, res){
-			assert.ok(!err)
-			assert.equal(err, null)
-			//console.log(res)
-			assert.ok(res.includes("Grau"))
+			laLogica.getZona("marjal", function ( hecho){
+				assert.strictEqual(err,null, "No devuelve error")
+				assert.strictEqual(res.nombre, "marjal", "Es Correcto?")
+				assert.strictEqual(res.descripcion, "marjal al lado del Grau de Gandia", "Es correcta?")
+			})
 			hecho() 	// avisar que este mini-test ha terminado
 		})
 	}) // it
+	// ....................................................
+	//
+	// ....................................................
+	it( "pruebo getZonas()", function( hecho ){
+		laLogica.getZona("marjal", function ( hecho){
+			assert.strictEqual(err,null, "No devuelve error")
+			assert.strictEqual(res[0].$longitud,0, "longitud primer vertice")
+			assert.strictEqual(res[0].$latitud,1, "latitud primer vertice")
+		})
+		hecho()
+
+	})
 	// ....................................................
 	//
 	// ....................................................

@@ -7,7 +7,7 @@
 // --------------------------------------------------------
 const assert = require ('assert')
 
-const request = require ('request') 
+const request = require ('request')
 
 // --------------------------------------------------------
 // --------------------------------------------------------
@@ -25,10 +25,10 @@ describe( "Test 2 (GET zona)", function() {
 	// ....................................................
 	//
 	// ....................................................
-	it( "pruebo que GET /zona/xeresa da 404 (no existe la zona)", function( hecho ){
+	it( "pruebo que GET /zona/xeresa da 200 (vacío)", function( hecho ){
 		request.get ( // peticion: GET
 			{
-				url: IP_PUERTO+"/zona/xeresa", 
+				url: IP_PUERTO+"/zona/xeresa",
 				headers: {
 					'User-Agent': 'jordi',
 				},
@@ -37,8 +37,8 @@ describe( "Test 2 (GET zona)", function() {
 			function (err, response, body) {
 
 				assert.equal( err, null, "¿error no vale null? " + err )
-				assert.equal( response.statusCode, 404,
-							  "¿status code no es 404?" )
+				assert.equal( response.statusCode, 200)
+				assert.ok(body.includes("null"))
 
 				console.log (" ----- respuesta a GET /zona/xeresa ---- ")
 				console.log ("       body = " + body)
@@ -50,7 +50,6 @@ describe( "Test 2 (GET zona)", function() {
 				hecho ()
 			}
 		) // post
-		
-	}) // it
-}) // describe 
 
+	}) // it
+}) // describe
